@@ -1,0 +1,91 @@
+.home-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ height: 130vh;
+ /* Make the container take up the full viewport height */
+}
+
+.home-image {
+ flex: 5;
+ /* Takes up 2/5 of the height */
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: #f0f0f0;
+}
+
+.main-image {
+ max-width: 100%;
+ max-height: 100%;
+ object-fit: cover;
+}
+
+.home-work {
+ flex: 4;
+ /* Takes up 2/5 of the height */
+ width: 100%;
+ padding: 20px;
+ background-color: #ffffff;
+ text-align: center;
+ overflow-y: auto;
+ /* Enable scroll if content exceeds section height */
+}
+
+.work-samples {
+ display: flex;
+ justify-content: center;
+ gap: 20px;
+}
+
+.sample {
+ background-color: #e0e0e0;
+ padding: 20px;
+ border-radius: 8px;
+}
+
+.home-footer {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: relative;
+ /* Make the footer a relative container */
+ flex: .7;
+ width: 100%;
+ padding: 10px;
+ background-color: #333;
+ color: white;
+ text-align: center;
+}
+
+.scroll-to-top {
+ position: absolute;
+ bottom: 45px;
+ left: 50%;
+ /* Position it in the middle horizontally */
+ transform: translateX(-50%);
+ /* Offset it by half of its own width to truly center it */
+ height: 110px;
+ width: 110px;
+ background-color: #333;
+ color: white;
+ border: none;
+ border-radius: 50%;
+ cursor: pointer;
+ font-size: 70px;
+ transition: bottom 0.5s ease;
+}
+
+.scroll-to-top:hover {
+ bottom: 50px;
+ left: 50%;
+ /* Change color on hover */
+}
+
+.footer-p {
+ padding-left: 20px;
+ /* Control the position of the text inside the footer */
+ padding-top: 40px;
+ margin: 0;
+}

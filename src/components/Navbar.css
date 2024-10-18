@@ -1,0 +1,129 @@
+/* Base navbar styles */
+nav {
+ height: 90px;
+ background-color: black;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ padding: 0 5rem;
+ position: relative;
+}
+
+.logo {
+ height: 100px;
+ width: 100px;
+}
+
+.dropdown {
+ animation: dropdown 0.5s ease-out;
+}
+
+@keyframes dropdown {
+ 0% {
+  top: -100px;
+  opacity: 0;
+ }
+
+ 100% {
+  top: 0;
+  opacity: 1;
+ }
+}
+
+.left-nav {
+ flex: 1;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+}
+
+.right-nav {
+ flex: 3;
+ display: flex;
+ justify-content: center;
+ gap: 50px;
+}
+
+nav a {
+ text-decoration: none;
+ color: white;
+}
+
+nav a.active {
+ font-weight: bold;
+ color: grey;
+}
+
+/* Hide the hamburger menu on large screens (default behavior) */
+.navbar-toggle {
+ display: none;
+ /* Hide hamburger by default */
+}
+
+/* Make the navbar responsive using media queries */
+@media (max-width: 768px) {
+ nav {
+  padding: 0 2rem;
+ }
+
+ .navbar-toggle {
+  display: block;
+  /* Show hamburger menu on smaller screens */
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  margin-left: auto;
+ }
+
+ .right-nav {
+  display: none;
+  /* Hide the navigation links by default on smaller screens */
+  flex-direction: column;
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+  background-color: black;
+  padding: 1rem;
+  gap: 20px;
+ }
+
+ /* Show the right-nav when active (toggle class via JavaScript/React) */
+ .right-nav.active {
+  display: flex;
+  /* Show links when toggled */
+ }
+
+ .left-nav {
+  justify-content: space-between;
+  width: 100%;
+ }
+
+ .logo {
+  height: 80px;
+  width: 80px;
+ }
+}
+
+/* Extra small screen */
+@media (max-width: 480px) {
+ nav {
+  flex-direction: column;
+  padding: 0 1rem;
+ }
+
+ .logo {
+  height: 60px;
+  width: 60px;
+ }
+
+ .right-nav {
+  padding: 1rem;
+ }
+
+ .navbar-toggle {
+  font-size: 25px;
+ }
+}
