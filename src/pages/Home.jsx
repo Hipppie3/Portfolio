@@ -15,14 +15,15 @@ function Home() {
       </section>
       
       <section className='home-work'>
-        <h2>My Work</h2>
+        <h2>SOME OF MY WORKS</h2>
         {/* Add examples of work or project components here */}
         <div className="work-samples">
           <div className="sample" onClick={() => window.location.href = 'https://daniel2dolist.netlify.app'}>
+            <div className="sample2"></div>
           To Do List
            </div>
-          <div className="sample">Project 2</div>
-          <div className="sample">Project 3</div>
+          <div className="sample"><div className="sample2"></div>Project 2</div>
+          <div className="sample"><div className="sample2"></div>Project 3</div>
         </div>
       </section>
       

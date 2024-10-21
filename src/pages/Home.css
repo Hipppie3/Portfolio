@@ -1,119 +1,184 @@
 .home-container {
- display: flex;
- flex-direction: column;
- align-items: center;
- height: 130vh;
- /* Make the container take up the full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 130vh;
+  /* Make the container take up the full viewport height */
 }
 
 @keyframes slideInBackground {
- from {
-  transform: translateX(100%);
-  opacity: 0;
-  /* Start off-screen to the right */
- }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+    /* Start off-screen to the right */
+  }
 
- to {
-  transform: translateX(0);
-  opacity: 1;
-  /* End in the center (normal position) */
- }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    /* End in the center (normal position) */
+  }
 }
 
 .home-image {
- flex: 5;
- background-image: url('../images/face.jpg');
- background-size: cover;
- background-position: 100% center;
- width: 100%;
- display: flex;
- justify-content: center;
- align-items: center;
- background-color: #f0f0f0;
- opacity: 0;
- animation: slideInBackground 1.5s ease forwards;
- animation-delay: 1s;
+  flex: 10;
+  background-size: cover;
+  background-position: 100% center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: 0;
+  animation: slideInBackground 1.5s ease forwards;
+  animation-delay: 1s;
+  z-index: 1;
 }
-
 
 .main-image {
- max-width: 100%;
- max-height: 100%;
- object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
+@keyframes homeworkAppears {
+ from {
+  opacity: 0;
+ }
+ to {
+  opacity: 1;
+
+ }
+}
 .home-work {
- flex: 4;
- /* Takes up 2/5 of the height */
- width: 100%;
- padding: 20px;
- background-color: #ffffff;
- text-align: center;
- overflow-y: auto;
- /* Enable scroll if content exceeds section height */
+  flex: 1.5;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(241, 241, 241, 0.497);
+  text-align: center;
+  overflow-y: auto;
+  border-top: 4px groove #b6adad3d;
+  opacity: 0;
+    animation: homeworkAppears 3s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.home-work h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: gray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.home-work h2::before,
+.home-work h2::after {
+  content: '';
+  display: block;
+  width: 33%;
+  height: 2px;
+  background-color: rgb(210, 210, 210);
+  margin: 0 20px;
 }
 
 .work-samples {
- display: flex;
- justify-content: center;
- gap: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
 }
 
 .sample {
- background-color: #e0e0e0;
- height: 300px;
- width: 20%;
- padding: 20px;
- border-radius: 8px;
+  background-color: #ffffff;
+  height: 250px;
+  width: 25%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sample2 {
+  background-color: #e0e0e0;
+  height: 70%;
+  border-radius: 8px;
 }
 
 .sample:hover {
-background-color: yellow;
-height: 310px;
-width: 21%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .home-footer {
- display: flex;
- justify-content: center;
- align-items: center;
- position: relative;
- /* Make the footer a relative container */
- flex: .7;
- width: 100%;
- padding: 10px;
- background-color: #333;
- color: white;
- text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 0.5;
+  width: 100%;
+  padding: 10px;
+  background-color: #e1e1e1f4;
+  color: white;
+  text-align: center;
+  border-top: 2px groove #edeaea3d;
 }
 
 .scroll-to-top {
- position: absolute;
- bottom: 45px;
- left: 50%;
- /* Position it in the middle horizontally */
- transform: translateX(-50%);
- /* Offset it by half of its own width to truly center it */
- height: 110px;
- width: 110px;
- background-color: #333;
- color: white;
- border: none;
- border-radius: 50%;
- cursor: pointer;
- font-size: 70px;
- transition: bottom 0.5s ease;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 105px;
+  width: 115px;
+  background-color: #e1e1e1f4;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 70px;
+  transition: bottom 1s ease;
 }
 
 .scroll-to-top:hover {
- bottom: 50px;
- left: 50%;
- /* Change color on hover */
+  bottom: 55%;
 }
 
 .footer-p {
- padding-left: 20px;
- /* Control the position of the text inside the footer */
- padding-top: 40px;
- margin: 0;
+  padding-left: 20px;
+  padding-top: 40px;
+  margin: 0;
+  color: gray;
+}
+
+/* Media query for tablets and small screens */
+@media (max-width: 1024px) {
+ .sample {
+  width: 55%;
+  height: 25vh;
+  min-height: 100px;
+  /* Adjust the width for tablets */
+  margin-bottom: 20px;
+  /* Add space between rows */
+ }
+ .sample2{
+  height: 70%;
+ }
+}
+
+/* Media query for iPhone screen size (430px width and 932px height) */
+@media (max-width: 430px) and (max-height: 932px) {
+ .sample {
+   width: 55%;
+   height: 15vh;
+   min-height: 100px;
+   /* Adjust the width for tablets */
+   margin-bottom: 20px;
+   /* Add space between rows */
+  }
+ 
+  .sample2 {
+   height: 70%;
+  }
 }
