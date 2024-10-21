@@ -11,8 +11,7 @@ function Home() {
   return (
     <div className='home-container'>
       <section className='home-image'>
-        {/* Insert your image here */}
-        <img src="path/to/your/image.jpg" alt="Description" className="main-image" />
+
       </section>
       
       <section className='home-work'>

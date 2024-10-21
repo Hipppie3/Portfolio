@@ -6,15 +6,35 @@
  /* Make the container take up the full viewport height */
 }
 
+@keyframes slideInBackground {
+ from {
+  transform: translateX(100%);
+  opacity: 0;
+  /* Start off-screen to the right */
+ }
+
+ to {
+  transform: translateX(0);
+  opacity: 1;
+  /* End in the center (normal position) */
+ }
+}
+
 .home-image {
  flex: 5;
- /* Takes up 2/5 of the height */
+ background-image: url('../images/face.jpg');
+ background-size: cover;
+ background-position: 100% center;
  width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
  background-color: #f0f0f0;
+ opacity: 0;
+ animation: slideInBackground 1.5s ease forwards;
+ animation-delay: 1s;
 }
+
 
 .main-image {
  max-width: 100%;
