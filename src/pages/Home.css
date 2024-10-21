@@ -41,8 +41,16 @@
 
 .sample {
  background-color: #e0e0e0;
+ height: 300px;
+ width: 20%;
  padding: 20px;
  border-radius: 8px;
+}
+
+.sample:hover {
+background-color: yellow;
+height: 310px;
+width: 21%;
 }
 
 .home-footer {
